@@ -1,0 +1,169 @@
+/*Los estilos de * estilos se aplican a todo el documento*/
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*esta propiedad no sé para que es*/
+    vertical-align: baseline;
+}
+body{
+    background-color: #F3F5FC;
+}
+/*header*/
+.header{
+    width: 95%;
+    margin: auto;
+    
+}
+.logo{
+    margin-top: 40px;
+}
+.main{
+    width: 85%;
+    margin: auto 40px auto auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: calc(100vh - 90px - 71px);
+    align-items: end; 
+}
+.columnaIzquierda{
+    height: 90%;
+    /*necesito que el texto que ingresa esté arriba y la info y los botones abajo*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ingresoTexto{
+    width: 80%;
+    font-size: 32px;
+    color: #0A3871;
+    border: none;
+    outline: none;
+    resize: none;
+    background: none;
+
+}
+
+.ingresoTexto::placeholder{
+    color: #0A3871;
+}
+
+.signoExclamacion{
+    margin-right: 5px;
+}
+.info{
+    color: gray;
+}
+
+/*posiciono los botones de la columna de la izq y separo los botones de la info*/
+.izquierdaBotones{
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    /*con este los botones se colocan uno debajo de otro cuando sea necesario x el tamaño*/
+    flex-wrap: wrap;
+}
+
+/*como los botones comparten propiedades los agrupo*/
+.btnEncriptar, 
+.btnDesencriptar,
+.btnCopiar{
+    /*para que se ajusten al tamaño de la pantalla le coloco un max-width y le doy un % al ancho. Estas medidas se modifican con mediaquery*/
+    max-width: 328px;
+    width: 40%;
+    height: 67px;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btnEncriptar{
+    background-color: #0A3871;
+        color: white;
+}
+.btnDesencriptar {
+    border: 2px solid;
+    background-color: #c7d1f7;
+    color:#0A3871;
+    
+}
+
+.columnaDerecha{
+    background-color: rgb(250, 250, 250);
+    height: calc(100% + 40px);
+    border-radius: 32px;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:32px;
+    align-items: center;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0 , 0, 0.8);
+}
+.columnaDerecha.ajustar{
+    justify-content: space-between;
+}
+
+.munieco{
+    width: 100%;
+}
+/*.oculto{
+    display: none;
+}*/
+
+.textoFinal{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.textoFinal.ajustar{
+    height: 80%;
+    font-weight: lighter;
+    text-align: left;
+    background: none;
+    resize: none;
+}
+.infoDerecha {
+    font-size: 16px;
+    color: grey;
+}
+.btnCopiar{
+    background-color:transparent;
+    width: 100%;
+    border: 2px solid;
+    color: #0A3871;
+    display: none;
+}
+
+@media screen and (max-width: 800px){
+    .main{
+        grid-template-columns: 1fr;
+        width: auto;
+        margin: auto 40px;
+    }
+    /*como a la columna de la derecha le di un height más alto que a la de la izq cuando lo hago responsivo tapa los botones. Con esto lo soluciono*/
+    .columnaDerecha {
+        height: 100%;
+    }
+    .munieco{
+        display: none;
+    }
+    /*con esto centro los botones al hacerlo responsivo*/
+    .izquierdaBotones{
+        justify-content: center;
+    }
+    /*y con esto centro le cambio el tamaño*/
+    .btnEncriptar,
+    .btnDesencriptar{
+        width: 45%;
+    } 
+
+}
+@media screen and (max-width: 500px){
+    .btnEncriptar,
+    .btnDesencriptar {
+        max-width: none;
+        width: 100%;
+    }
+}
+
