@@ -12,7 +12,7 @@ const claveEncriptacion = [["e", "enter"], ["o", "ober"], ["i", "imes"], ["a", "
 /*función para que desaparezcan los elementos de la columna derecha,aparezca el boton copiar y vuelva el foco al placeholder de la columna izquierda.*/ 
 function limpiar() {
     btnCopiar.style.display = "block";
-    muneco.style.display = "none";
+    muneco.classList.add("oculto");
     noEncontrado.style.display = "none";
     info.style.display = "none";
     textoIngresado.focus();
@@ -22,7 +22,7 @@ function reset() {
     mensajeFinal.innerHTML = "";
     textoIngresado.value = "";
     btnCopiar.style.display = "none";
-    muneco.style.display = "block";
+    muneco.classList.remove("oculto");
     noEncontrado.style.display = "block";
     info.style.display = "block";
     textoIngresado.focus();
@@ -59,7 +59,7 @@ btnEncriptar.addEventListener("click", () => {
     mensajeFinal.innerHTML = textoEncriptado;
     limpiar(); 
     /*utilizo la función setTimeout pero no sé si es la más adecuada manera de hacer que todo vuelva al inicio sin recargar la página.*/
-    setTimeout(reset, 2000); 
+    setTimeout(reset, 5000); 
 })
 /*agrego un eventlistener al boton desencriptar y ejecuto a función desenencriptar.Valido si se ingresa o no,texto.*/ 
 btnDesencriptar.addEventListener("click", () => {
@@ -74,7 +74,7 @@ btnDesencriptar.addEventListener("click", () => {
     mensajeFinal.innerHTML = textoEncriptado;
     limpiar();
     /*utilizo la función setTimeout pero no sé si es la más adecuada manera de hacer que todo vuelva al inicio sin recargar la página.*/
-    setTimeout(reset, 2000); 
+    setTimeout(reset, 5000); 
     
 })
 /*agrego un eventlistener al boton copiar que copia el contenido al portapapeles y resetea.*/ 

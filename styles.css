@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     border: 0;
-    /*esta propiedad no sé para que es*/
     vertical-align: baseline;
 }
 body{
@@ -107,9 +106,9 @@ body{
 .munieco{
     width: 100%;
 }
-/*.oculto{
+oculto{
     display: none;
-}*/
+}
 
 .textoFinal{
     text-align: center;
@@ -164,6 +163,6 @@ body{
     .btnDesencriptar {
         max-width: none;
         width: 100%;
-    }
+    }   
 }
 
